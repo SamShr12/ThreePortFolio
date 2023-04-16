@@ -35,7 +35,7 @@ export const Overlay = () => {
         </div>
       )}
       <div className={`outro ${end ? "outro--appear" : ""}`}>
-        <p className="outro__text">Thank you for you time.</p>
+        <p className="outro__text">Hope You Have A Great Day!</p>
       </div>
     </div>
   );

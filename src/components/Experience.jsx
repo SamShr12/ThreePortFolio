@@ -10,13 +10,14 @@ import { Airplane } from "./Airplane";
 import { Background } from "./Background";
 import { Cloud } from "./Cloud";
 import { TextSection } from "./TextSection";
+import { Aeroplane } from "./Aeroplane";
 
-const LINE_NB_POINTS = 1000;
-const CURVE_DISTANCE = 250;
+const LINE_NB_POINTS = 3000;
+const CURVE_DISTANCE = 150;
 const CURVE_AHEAD_CAMERA = 0.008;
 const CURVE_AHEAD_AIRPLANE = 0.02;
 const AIRPLANE_MAX_ANGLE = 35;
-const FRICTION_DISTANCE = 42;
+const FRICTION_DISTANCE = 50;
 
 export const Experience = () => {
   const curvePoints = useMemo(
@@ -43,14 +44,14 @@ export const Experience = () => {
   const textSections = useMemo(() => {
     return [
       {
-        cameraRailDist: -1,
+        cameraRailDist: -2,
         position: new Vector3(
-          curvePoints[1].x - 3,
+          curvePoints[1].x - 8,
           curvePoints[1].y,
-          curvePoints[1].z
+          curvePoints[1].z - 5
         ),
-        subtitle: `about me,
-Live your life`,
+        title:"ME",
+        subtitle: `Dreaming ideas and making them into reality is my goal in life. I also make digital illustrations, write novels, research topics and play piano.`,
       },
       {
         cameraRailDist: 1.5,
@@ -59,7 +60,33 @@ Live your life`,
           curvePoints[2].y,
           curvePoints[2].z
         ),
-        title: "work experience",
+        title: "My Work Experience",
+        subtitle: `Do you want a drink?
+We have a wide range of beverages!`,
+      },
+      {
+        cameraRailDist: 0.5,
+        position: new Vector3(
+          curvePoints[2].x - 10,
+          curvePoints[2].y + 2,
+          curvePoints[2].z - 20
+        ),
+        title: "Front-End Developer - Intern",
+        subtitle: `Deerwalk 
+        - Developed and maintained code, using React.js and related technologies. 
+        - Collaborated with other teams and developers to create user-friendly interfaces.
+        - Performed in-depth analysis and implemented modern trends and technologies in web application.
+        - Designed wireframes, and prototypes to visualize the layout and interfaces
+        `,
+      },
+      {
+        cameraRailDist: -1,
+        position: new Vector3(
+          curvePoints[2].x - 20,
+          curvePoints[2].y,
+          curvePoints[2].z - 40 ,
+        ),
+        title: "Intern",
         subtitle: `Do you want a drink?
 We have a wide range of beverages!`,
       },
@@ -81,6 +108,16 @@ We have a wide range of beverages!`,
           curvePoints[4].z - 12
         ),
         title: "contact me",
+        subtitle: `We provide a large selection of medias, we highly recommend you Porco Rosso during the flight`,
+      },
+      {
+        cameraRailDist: 1.5,
+        position: new Vector3(
+          curvePoints[5].x - 1,
+          curvePoints[5].y,
+          curvePoints[5].z - 14
+        ),
+        title: "sheeesh",
         subtitle: `We provide a large selection of medias, we highly recommend you Porco Rosso during the flight`,
       },
     ];
@@ -315,7 +352,7 @@ We have a wide range of beverages!`,
 
     const scrollOffset = Math.max(0, scroll.offset);
 
-    let friction = 5;
+    let friction = 1;
     let resetCameraRail = true;
     // LOOK TO CLOSE TEXT SECTIONS
     textSections.forEach((textSection) => {
@@ -512,10 +549,15 @@ We have a wide range of beverages!`,
           </group>
           <group ref={airplane}>
             <Float floatIntensity={1} speed={1.5} rotationIntensity={0.5}>
-              <Airplane
+              {/* <Airplane
                 rotation-y={Math.PI / 2}
-                scale={[0.2, 0.2, 0.2]}
+                scale={[0.3, 0.3, 0.3]}
                 position-y={0.1}
+              /> */}
+              <Aeroplane 
+              rotation-y={Math.PI}
+              scale={[0.1, 0.1, 0.1]}
+              position-y={0.05}
               />
             </Float>
           </group>
