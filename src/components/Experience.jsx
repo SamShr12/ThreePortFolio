@@ -50,8 +50,9 @@ export const Experience = () => {
           curvePoints[1].y,
           curvePoints[1].z - 5
         ),
-        title:"ME",
-        subtitle: `Dreaming ideas and making them into reality is my goal in life. I also make digital illustrations, write novels, research topics and play piano.`,
+        title:"Experience",
+        subtitle: `I'm passionate about creative and innovative development. I like exploring new things, technologies and combining them to create a immerse experience.
+        `,
       },
       {
         cameraRailDist: 1.5,
@@ -60,35 +61,18 @@ export const Experience = () => {
           curvePoints[2].y,
           curvePoints[2].z
         ),
-        title: "My Work Experience",
-        subtitle: `Do you want a drink?
-We have a wide range of beverages!`,
+        title: "SkillHub",
+        subtitle: `Web Developer`,
       },
       {
         cameraRailDist: 0.5,
         position: new Vector3(
           curvePoints[2].x - 10,
-          curvePoints[2].y + 2,
+          curvePoints[2].y - 2,
           curvePoints[2].z - 20
         ),
-        title: "Front-End Developer - Intern",
-        subtitle: `Deerwalk 
-        - Developed and maintained code, using React.js and related technologies. 
-        - Collaborated with other teams and developers to create user-friendly interfaces.
-        - Performed in-depth analysis and implemented modern trends and technologies in web application.
-        - Designed wireframes, and prototypes to visualize the layout and interfaces
-        `,
-      },
-      {
-        cameraRailDist: -1,
-        position: new Vector3(
-          curvePoints[2].x - 20,
-          curvePoints[2].y,
-          curvePoints[2].z - 40 ,
-        ),
-        title: "Intern",
-        subtitle: `Do you want a drink?
-We have a wide range of beverages!`,
+        title: "SkillHub",
+        subtitle: `Frontend Developer`,
       },
       {
         cameraRailDist: -1,
@@ -97,8 +81,10 @@ We have a wide range of beverages!`,
           curvePoints[3].y,
           curvePoints[3].z
         ),
-        title: "creations",
-        subtitle: `Our flight attendants will help you have a great journey`,
+        title: "My Skills",
+        subtitle: `[HTML5, CSS3, JS, ReactJs, React Native, TypeScript, VueJs, 
+          SASS, SCSS, 
+        ]`,
       },
       {
         cameraRailDist: 1.5,
@@ -109,17 +95,7 @@ We have a wide range of beverages!`,
         ),
         title: "contact me",
         subtitle: `We provide a large selection of medias, we highly recommend you Porco Rosso during the flight`,
-      },
-      {
-        cameraRailDist: 1.5,
-        position: new Vector3(
-          curvePoints[5].x - 1,
-          curvePoints[5].y,
-          curvePoints[5].z - 14
-        ),
-        title: "sheeesh",
-        subtitle: `We provide a large selection of medias, we highly recommend you Porco Rosso during the flight`,
-      },
+      }
     ];
   }, []);
 
@@ -564,7 +540,7 @@ We have a wide range of beverages!`,
         </group>
         {/* TEXT */}
         {textSections.map((textSection, index) => (
-          <TextSection {...textSection} key={index} />
+          <TextSection {...textSection}  key={index}/>
         ))}
 
         {/* LINE */}
@@ -591,9 +567,9 @@ We have a wide range of beverages!`,
         </group>
 
         {/* CLOUDS */}
-        {clouds.map((cloud, index) => (
+        {/* {clouds.map((cloud, index) => (
           <Cloud sceneOpacity={sceneOpacity} {...cloud} key={index} />
-        ))}
+        ))} */}
       </>
     ),
     []

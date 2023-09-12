@@ -3,13 +3,13 @@ import { fadeOnBeforeCompileFlat } from "../utils/fadeMaterial";
 
 export const TextSection = ({ title, subtitle, ...props }) => {
   return (
-    <group {...props}>
+    <group {...props} >
       {!!title && (
         <Text
           color="white"
           anchorX={"left"}
           anchorY="bottom"
-          fontSize={0.52}
+          fontSize={1}
           maxWidth={5.5}
           lineHeight={1.5}
           font={"./fonts/DMSerifDisplay-Regular.ttf"}
@@ -26,8 +26,8 @@ export const TextSection = ({ title, subtitle, ...props }) => {
         color="white"
         anchorX={"left"}
         anchorY="top"
-        fontSize={0.19}
-        maxWidth={8.5}
+        fontSize={0.39}
+        maxWidth={9.5}
         lineHeight={1.5}
         font={"./fonts/Inter-Regular.ttf"}
       >
